@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+    <body>
+        <div class="container">
+            <form class="from-signin" th:method="post" th:action="@{/start/login}">
+            <!--   <form class="from-signin" method="post" action="/start/login">-->
+                <h2 class="from-signin-heading"> Login</h2>
+                    <label for="name">Input Name: </label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Name"/><br/>
+                    <label for="password">Input Password: </label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Password"/><br/>
+                <input type="submit" value="Sign in"/>
+            </form>
+        </div>
+    </body>
+</html>

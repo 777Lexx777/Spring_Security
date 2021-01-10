@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">-->
+<html lang="en"   xmlns:th="http://thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>New User</title>
+</head>
+<body>
+<caption><h1>Create New User</h1></caption>
+<!--<form th:method="POST" th:action="@{/start/new}" th:object="${newUser}">-->
+    <form th:method="POST" th:action="@{/start}" th:object="${newUser}">
+    <label for="firstName"> Enter First Name: </label>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
+    <div style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name error</div>
+    <br/>
+    <label for="lastName">Enter Last Name: </label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <div style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name error</div>
+    <br/>
+    <label for="age">Enter Age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Name error</div>
+    <br/>
+
+    <label for="name">Enter Name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Name error </div><br/>
+
+    <label for="password">Enter Password: </label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <div style="color: red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Name error </div><br/>
+
+    <label for="roles">Enter Roles: </label>
+    <input type="text" th:field="*{roles}" id="roles"/>
+    <div style="color: red" th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}">Roles Name error </div><br/>
+
+    <label for="status">Enter Status: </label>
+    <input type="text" th:field="*{status}" id="status"/>
+    <div style="color: red" th:if="${#fields.hasErrors('status')}" th:errors="*{status}">Status Name error </div><br/>
+
+    <input type="submit" value="Create !"/>
+</form>
+<br/><a th:href="@{/start/admin }">Click here to return to the list</a>
+</body>
+</html>
