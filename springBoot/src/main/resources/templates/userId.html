@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:th="http://thymeleaf.org">-->
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+        <table border="2">
+            <thead>
+            <caption><h1>User</h1></caption>
+            <tr>
+                <th> ID</th>
+                <th> First Name</th>
+                <th> Last Name</th>
+                <th> Age</th>
+                <th> Name</th>
+                <th> Password</th>
+                <th> Roles</th>
+                <th> Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><p th:text="${messagesID.getId()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getFirstName()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getLastName()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getAge()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getName()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getPassword()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getRoles()}">VALUE</p></td>
+                <td><p th:text="${messagesID.getStatus()}">VALUE</p></td>
+            </tr>
+            </tbody>
+        </table>
+        <br/><a th:href="@{/start/admin/{id}/edit(id=${messagesID.getId()})}">Click here to Update</a><br/>
+        <a th:href="@{/start/admin}" >Click here to return to the list</a><br/>
+        <a th:href="@{/start/logout}" >Logout</a><br/>
+        <br/><form th:method="DELETE" th:action="@{/start/deleted/{id}(id=${messagesID.getId()})}">
+            <input type="submit" value="Delete User"/>
+        </form>
+</body>
+</html>
